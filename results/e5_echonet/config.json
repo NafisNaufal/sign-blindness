@@ -1,0 +1,8 @@
+{
+  "epochs": 30,
+  "batch_size": 64,
+  "lr": 0.001,
+  "width": 32,
+  "seed": 0,
+  "tag": "e5_echonet"
+}

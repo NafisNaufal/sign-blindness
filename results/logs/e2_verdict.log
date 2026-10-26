@@ -1,0 +1,23 @@
+computing ground-truth EF once...
+  none: 2000 frames
+  generic: 2000 frames
+  acoustic: 2000 frames
+
+==============================================================================
+E2 VERDICT  --  primary endpoint: catastrophic EF failure (>10 pts) on POOR stratum
+==============================================================================
+arm        stratum     n   EF MAE           95% CI  catastrophic
+none       Poor       47     7.35  [ 5.76, 8.96]          38.3%
+none       Good+Med  453     5.10  [ 4.66, 5.56]          11.9%
+
+generic    Poor       47     7.27  [ 5.65, 9.07]          29.8%
+generic    Good+Med  453     5.46  [ 4.97, 5.99]          11.7%
+
+acoustic   Poor       47     7.98  [ 5.50,11.54]          25.5%
+acoustic   Good+Med  453     5.86  [ 5.19, 6.66]          14.3%
+
+POOR: generic   vs none -> MAE 7.35 -> 7.27 (-1.1%)  catastrophic 38.3% -> 29.8%   p=0.952
+POOR: acoustic  vs none -> MAE 7.35 -> 7.98 (+8.6%)  catastrophic 38.3% -> 25.5%   p=0.734
+
+HEAD-TO-HEAD acoustic vs generic on POOR: 7.27 vs 7.98  p=0.940
+  -> the polar-geometry premise stands only if acoustic beats generic here.

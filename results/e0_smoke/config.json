@@ -1,0 +1,10 @@
+{
+  "epochs": 5,
+  "batch_size": 16,
+  "lr": 0.001,
+  "width": 32,
+  "size": 256,
+  "seed": 0,
+  "workers": 4,
+  "tag": "e0_smoke"
+}

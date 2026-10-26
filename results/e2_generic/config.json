@@ -1,0 +1,12 @@
+{
+  "folds": 5,
+  "epochs": 50,
+  "batch_size": 16,
+  "lr": 0.001,
+  "width": 32,
+  "seed": 0,
+  "aug": "generic",
+  "degrade_severity": 0.8,
+  "degrade_p": 0.5,
+  "tag": "e2_generic"
+}

@@ -1,0 +1,2 @@
+n_patients,outcome,predictors,adjusted_or,ci_95_low,ci_95_high,p_value,reference_ef_p_value
+500,large EF error (>10 points),poor quality + reference EF,4.890091040260947,2.490061932161096,9.603371736736921,4.038995059206306e-06,0.4304876242278419

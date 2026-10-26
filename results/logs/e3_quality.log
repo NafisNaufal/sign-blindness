@@ -1,0 +1,33 @@
+[E3] 2000 frames  grades: {'Good': 1010, 'Medium': 758, 'Poor': 232}
+<repo>/experiments/e3_quality_net.py:92: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()
+<repo>/experiments/e3_quality_net.py:98: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+  fold 0 done (400 held-out frames)
+  fold 1 done (400 held-out frames)
+  fold 2 done (400 held-out frames)
+  fold 3 done (400 held-out frames)
+  fold 4 done (400 held-out frames)
+
+====================================================================
+E3  QUALITY GRADER, out-of-fold on CAMUS
+====================================================================
+  Spearman rho vs expert grade : 0.664  (p=1.10e-254)
+  exact 3-class accuracy       : 0.689
+  within-one-grade accuracy    : 0.994
+  reference: published estimator rho=0.69, inter-observer rho=0.63
+  --> AT OR NEAR HUMAN AGREEMENT
+
+  confusion (rows=true, cols=pred):
+pred_idx    0    1   2
+true                  
+Good      795  213   2
+Medium    207  525  26
+Poor       10  165  57
+
+  mean predicted score by true grade:
+        count   mean    std
+true                       
+Good     1010  0.322  0.293
+Medium    758  0.799  0.399
+Poor      232  1.219  0.372

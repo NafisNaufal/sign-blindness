@@ -1,0 +1,16 @@
+[E5] train 14920 val 2576 test 2552 frames
+<repo>/experiments/e5_echonet_seg.py:59: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()
+<repo>/experiments/e5_echonet_seg.py:80: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(): loss = dice_ce_loss(model(x), y, n_classes=2)
+  ep   5 loss 0.0653  val Dice 0.9171  *
+  ep  10 loss 0.0589  val Dice 0.9210  *
+  ep  15 loss 0.0543  val Dice 0.9230  *
+  ep  20 loss 0.0486  val Dice 0.9238  *
+  ep  25 loss 0.0419  val Dice 0.9222
+  ep  30 loss 0.0389  val Dice 0.9213
+<repo>/experiments/e5_echonet_seg.py:88: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(out/"best.pt"))
+
+test Dice 0.9241  (published EchoNet ~0.92)
+-> <repo>/results/e5_echonet

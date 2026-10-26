@@ -1,0 +1,46 @@
+[E0] train 1600 | val 200 | test 200 samples
+     train quality: {'Good': 816, 'Medium': 604, 'Poor': 180}
+     val quality: {'Good': 100, 'Medium': 78, 'Poor': 22}
+     test quality: {'Good': 94, 'Medium': 76, 'Poor': 30}
+<repo>/experiments/e0_quality_gap.py:96: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()
+     UNet width=32: 7.76M params
+<repo>/experiments/e0_quality_gap.py:107: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+  ep   5  loss 0.1776  val Dice 0.8441  *   [27s]
+  ep  10  loss 0.1221  val Dice 0.8953  *   [48s]
+  ep  15  loss 0.1030  val Dice 0.8938   [68s]
+  ep  20  loss 0.0875  val Dice 0.8988  *   [91s]
+  ep  25  loss 0.0736  val Dice 0.9005  *   [179s]
+  ep  30  loss 0.0594  val Dice 0.9019  *   [200s]
+  ep  35  loss 0.0478  val Dice 0.9030  *   [220s]
+  ep  40  loss 0.0382  val Dice 0.9027   [242s]
+  ep  45  loss 0.0326  val Dice 0.9027   [288s]
+  ep  50  loss 0.0252  val Dice 0.9022   [382s]
+  ep  55  loss 0.0203  val Dice 0.9030   [403s]
+  ep  60  loss 0.0170  val Dice 0.9022   [496s]
+  ep  65  loss 0.0146  val Dice 0.9019   [518s]
+  ep  70  loss 0.0136  val Dice 0.9018   [539s]
+  ep  75  loss 0.0131  val Dice 0.9018   [560s]
+  ep  80  loss 0.0130  val Dice 0.9017   [580s]
+<repo>/experiments/e0_quality_gap.py:123: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(out / "best.pt"))
+
+======================================================================
+E0  DICE BY EXPERT QUALITY GRADE  (test + val pooled)
+======================================================================
+  Good    n= 194   Dice 0.9119  95% CI [0.9072, 0.9163]
+  Medium  n= 154   Dice 0.8999  95% CI [0.8934, 0.9059]
+  Poor    n=  52   Dice 0.8746  95% CI [0.8605, 0.8876]
+
+  Good+Medium vs Poor: gap +0.0320 Dice, Mann-Whitney p = 2.912e-07
+  --> A1 SUPPORTED
+
+  per-structure Dice by quality:
+         dice_lv_endo  dice_myocardium  dice_left_atrium
+quality                                                 
+Good           0.9418           0.8834            0.9105
+Medium         0.9283           0.8680            0.9034
+Poor           0.9084           0.8271            0.8883
+
+-> <repo>/results/e0_baseline

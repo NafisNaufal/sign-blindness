@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+
+# Raw / cached clinical image data: never commit.
+# CAMUS and EchoNet-Dynamic are obtained from their owners; EchoNet-Dynamic is
+# covered by the Stanford AIMI Research Use Agreement (no redistribution).
+/data/
+
+# Model checkpoints are not distributed (trained on EchoNet-Dynamic / CAMUS)
+*.pt
+*.pth
+
+# Per-video EchoNet-Dynamic outputs (keyed by the dataset's video IDs).
+# Regenerate with experiments/e5_echonet_seg.py after obtaining the data.
+/results/e5_echonet/per_frame.csv
+/results/e5_echonet/per_patient_ef.csv
+/results/e7_revisions/signed_error_analysis.csv
+/results/e7_revisions/r1_null_model.csv
+
+# Paper build output and reviewer material
+/paper/*.aux
+/paper/*.log
+/paper/*.out
+/paper/*.pdf
+/paper/REVIEW.md
+
+.DS_Store

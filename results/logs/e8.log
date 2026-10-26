@@ -1,0 +1,22 @@
+<repo>/experiments/e8_model_sweep.py:58: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  sc=torch.cuda.amp.GradScaler()
+<repo>/experiments/e8_model_sweep.py:64: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(): loss=dice_ce_loss(model(x),y,n_classes=2)
+  tiny-6ep     w= 8 ep= 6  Dice 0.9189  EF MAE  6.85  catastrophic  21.4%
+  small-12ep   w=12 ep=12  Dice 0.9230  EF MAE  6.69  catastrophic  21.4%
+  mid-20ep     w=20 ep=20  Dice 0.9232  EF MAE  6.75  catastrophic  19.9%
+  full-35ep    w=32 ep=35  Dice 0.9195  EF MAE  8.00  catastrophic  27.2%
+
+==========================================================================
+R2  ACROSS-MODEL: does higher Dice mean lower EF error?
+==========================================================================
+     model  epochs  width    n   dice  ef_mae  catastrophic
+  tiny-6ep       6      8 1276 0.9189  6.8506       21.3950
+small-12ep      12     12 1276 0.9230  6.6915       21.3950
+  mid-20ep      20     20 1276 0.9232  6.7504       19.9060
+ full-35ep      35     32 1276 0.9195  7.9994       27.1944
+
+  across models: Pearson r(Dice, EF MAE) = -0.567 (p=0.433); Spearman -0.600
+  Dice range spanned: 0.9189 to 0.9232 (0.0044)
+  EF MAE range      : 6.69 to 8.00
+  --> across models, higher Dice DOES track lower EF error

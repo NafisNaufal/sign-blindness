@@ -1,0 +1,18 @@
+[cache] 10025 videos, 48 workers, size 112
+  ...1000/10025
+  ...2000/10025
+  ...3000/10025
+  ...4000/10025
+  ...5000/10025
+  ...6000/10025
+  ...7000/10025
+  ...8000/10025
+  ...9000/10025
+  ...10000/10025
+
+cached 20048 frames from 10024 videos
+  images 1006 MB  masks 251 MB
+  phases: {'ED': 10024, 'ES': 10024}
+  splits: {'TRAIN': 14920, 'VAL': 2576, 'TEST': 2552}
+  mean LV area frac: 0.0921
+  -> <repo>/data/cache_echonet

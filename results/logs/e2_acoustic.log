@@ -1,0 +1,16 @@
+<repo>/experiments/e1_crossval.py:71: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()
+<repo>/experiments/e1_crossval.py:77: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(): loss = dice_ce_loss(model(x), y)
+  fold 0: 400 held-out frames, Dice 0.8919
+  fold 1: 400 held-out frames, Dice 0.8907
+  fold 2: 400 held-out frames, Dice 0.8935
+  fold 3: 400 held-out frames, Dice 0.8944
+  fold 4: 400 held-out frames, Dice 0.8834
+
+=== e2_acoustic: out-of-fold Dice by quality (n=2000 frames) ===
+         count    mean     std
+quality                       
+Good      1010  0.8972  0.0510
+Medium     758  0.8885  0.0515
+Poor       232  0.8703  0.0594
